@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="96" viewBox="0 0 260 96">
+  <rect x="2" y="2" width="256" height="92" rx="22" fill="white" stroke="#dbe3ef"/>
+  <text x="24" y="34" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" fill="#111827">amazon ads</text>
+  <path d="M43 42c21 12 54 12 79-1" stroke="#111827" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M115 37l13 1-7 10" stroke="#111827" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="24" y="65" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="850" fill="#0f9f9a">Verified</text>
+  <text x="24" y="84" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="850" fill="#1f2937">partner</text>
+</svg>

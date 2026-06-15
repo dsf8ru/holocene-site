@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="76" viewBox="0 0 320 76">
+  <rect x="2" y="2" width="316" height="72" rx="10" fill="white" stroke="#d1d5db"/>
+  <path d="M37 22l29-6 8 7-4 39-41-6 4-31 4-3z" fill="#95bf47"/>
+  <path d="M46 23c1-10 13-12 15 0" stroke="white" stroke-width="3" fill="none"/>
+  <text x="53" y="54" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="900" fill="white">S</text>
+  <text x="92" y="29" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="850" letter-spacing="2" fill="#111827">FIND IT ON THE</text>
+  <text x="92" y="56" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500" fill="#111827">Shopify App Store</text>
+</svg>

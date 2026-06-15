@@ -1,0 +1,27 @@
+
+services:
+
+  holocene-site:
+
+    build: .
+
+    container_name: holocene-site
+
+    restart: unless-stopped
+
+    expose:
+
+      - "3000"
+
+    networks:
+
+      - default
+
+      - edge_default
+
+networks:
+
+  edge_default:
+
+    external: true
+
