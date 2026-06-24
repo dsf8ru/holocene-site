@@ -647,9 +647,11 @@ h3 {
   line-height: 1;
 }
 
+
 .badges-section {
-  padding: 10px 0 42px;
+  padding: 8px 0 34px;
 }
+
 
 .badges-row {
   display: flex;
@@ -691,15 +693,11 @@ h3 {
 
 /* badge tuning */
 
+
 .badges-section {
-
-  padding-top: 18px !important;
-
-  padding-bottom: 64px !important;
-
-  margin-top: 0 !important;
-
+  padding: 8px 0 34px;
 }
+
 
 .badges-row {
 
@@ -1048,3 +1046,64 @@ h3 {
 
 }
 
+/* --- value strip fix --- */
+
+.value-strip {
+  padding: 10px 0 26px !important;
+}
+
+
+.value-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+.value-card {
+  display: block !important;
+  padding: 22px !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-radius: 22px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.045) !important;
+}
+
+.value-kicker {
+  display: block !important;
+  margin-bottom: 10px !important;
+  color: #64748b !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.value-card strong {
+  display: block !important;
+  color: #07883f !important;
+  font-size: 26px !important;
+  line-height: 1.1 !important;
+  font-weight: 620 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.value-card strong.profit {
+  color: #f97316 !important;
+}
+
+.value-card p {
+  margin: 12px 0 0 !important;
+  color: #475569 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 900px) {
+  .value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .value-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

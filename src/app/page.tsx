@@ -52,7 +52,7 @@ function Footer() {
 
           <Image className="footer-mark" src="/logo-transparent.png" alt="Holocene" width={64} height={64} />
 
-          <span>Holocene</span>
+          <span>Holocene</span><small>AI Pricing Co-Pilot</small>
 
         </a>
         <div className="footer-links">
@@ -74,10 +74,10 @@ export default function Home() {
         <section className="hero">
           <div className="container hero-grid">
             <div>
-              <div className="eyebrow">Built for Amazon Private Label sellers</div>
-              <h1>Holocene AI Pricing Co-Pilot</h1>
+              <div className="eyebrow">AI Revenue Manager for Amazon Private Label and Brands</div>
+              <h1>AI Revenue Manager<br />for Amazon Brands</h1>
               <p className="lead">
-                Understand how pricing behavior impacts revenue and profit. Analyze Seller Central and Amazon Ads data to identify pricing opportunities, evaluate pricing evidence, and make better pricing decisions.
+                Find where your Amazon business is leaving money behind — pricing, advertising, revenue, and profit opportunities in one dashboard.
               </p>
 
               <div className="hero-actions">
@@ -87,15 +87,43 @@ export default function Home() {
             </div>
 
             <Screen
-              desktop="/image1.jpg"
-              mobile="/image_m1.jpg"
-              alt="Holocene Pricing Dashboard"
+              desktop="/revenue-manager-desktop.webp"
+              mobile="/revenue-manager-mobile.webp"
+              alt="Holocene AI Revenue Manager dashboard"
               priority
               hero
             />
           </div>
         </section>
 
+
+
+        <section className="value-strip" aria-label="Revenue Manager capabilities">
+          <div className="container value-grid">
+            <div className="value-card">
+              <span className="value-kicker">Revenue Opportunities</span>
+              <strong>+$9,067/month</strong>
+              <p>Find products with revenue upside from pricing and advertising.</p>
+            </div>
+            <div className="value-card">
+              <span className="value-kicker">Profit Opportunities</span>
+              <strong className="profit">+$3,218/month</strong>
+              <p>See profit impact before you make changes.</p>
+            </div>
+            <div className="value-card">
+              <span className="value-kicker">Advertising Expansion</span>
+              <strong>+$1,257/month</strong>
+              <p>Identify products where more ad spend can drive growth.</p>
+            </div>
+            <div className="value-card">
+              <span className="value-kicker">Recommended Actions</span>
+              <strong>3 products</strong>
+              <p>Know what to review next for every product.</p>
+            </div>
+          </div>
+        </section>
+
+        
         <section className="badges-section" aria-label="Holocene marketplace and partner listings">
           <div className="container badges-row">
             <a className="badge-link" href="https://advertising.amazon.com/en-gb/partners/directory/details/amzn1.ads1.ma1.9zh2pgko4bqxt16cod1g95l55/Holocene-Services-OU" target="_blank" rel="noreferrer">
@@ -109,58 +137,35 @@ export default function Home() {
             </a>
           </div>
         </section>
-
-        <section className="section">
-          <div className="container workspace-grid">
-            <Screen
-              desktop="/image2.jpg"
-              mobile="/image_m2.jpg"
-              alt="Holocene Pricing Workspace"
-            />
-
-            <div className="workspace-copy">
-              <div className="section-head">
-                <h2>Pricing Workspace</h2>
-                <p>
-                  Move from product opportunity to price-level analysis. Review pricing evidence,
-                  historical price points, recommended revenue prices, recommended profit prices,
-                  and expected impact before making changes in Amazon.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="how">
+<section className="section" id="how">
           <div className="container workflow">
             <div className="section-head">
               <h2>How it works</h2>
               <p>
-                Connect Amazon data, let Holocene evaluate pricing behavior, then review recommendations
-                or enable the AI co-pilot workflow.
+                Connect Amazon, let Holocene analyze the last 60 days, then review revenue opportunities or enable the AI co-pilot workflow.
               </p>
             </div>
 
             <div className="steps">
               <div className="step">
                 <div className="step-num">1</div>
-                <h3>Connect Amazon data</h3>
+                <h3>Connect Amazon</h3>
                 <p>Connect Seller Central and Amazon Ads.</p>
               </div>
               <div className="step">
                 <div className="step-num">2</div>
-                <h3>Analyze pricing behavior</h3>
-                <p>Holocene reviews sales, price changes, discounts, advertising context, and cost completeness.</p>
+                <h3>AI analyzes your business</h3>
+                <p>Holocene reviews sales, pricing, advertising, and product economics from the last 60 days.</p>
               </div>
               <div className="step">
                 <div className="step-num">3</div>
-                <h3>Review recommendations</h3>
-                <p>Inspect pricing evidence, revenue opportunity, profit opportunity, and recommended prices.</p>
+                <h3>Revenue opportunities identified</h3>
+                <p>Find pricing, advertising, and profit improvements for every product.</p>
               </div>
               <div className="step">
                 <div className="step-num">4</div>
-                <h3>Enable AI co-pilot</h3>
-                <p>Use recommendation mode first, then move toward controlled price optimization when ready.</p>
+                <h3>Review or automate</h3>
+                <p>Start with recommendations, then enable AI Revenue Manager when ready.</p>
               </div>
             </div>
           </div>
@@ -170,25 +175,25 @@ export default function Home() {
           <div className="container faq">
             <div>
               <h2>FAQ</h2>
-              <p className="lead">A practical pricing analytics layer for sellers using Amazon Seller Central and Amazon Ads.</p>
+              <p className="lead">A practical AI Revenue Manager for sellers using Amazon Seller Central and Amazon Ads.</p>
             </div>
 
             <div className="faq-list">
               <div className="faq-item">
-                <h3>Who is Holocene built for?</h3>
-                <p>Holocene is built for Amazon Private Label sellers who control their own prices and want product-level pricing decisions backed by data.</p>
+                <h3>What does AI Revenue Manager actually do?</h3>
+                <p>Holocene identifies revenue, profit, pricing, and advertising opportunities for Amazon Private Label sellers, then turns them into product-level recommended actions.</p>
               </div>
               <div className="faq-item">
                 <h3>What data does Holocene use?</h3>
-                <p>Holocene uses Seller Central sales data and Amazon Ads performance data to analyze pricing behavior, revenue opportunity, profit opportunity, and advertising context.</p>
+                <p>Holocene uses Seller Central sales data and Amazon Ads performance data to analyze revenue opportunity, profit opportunity, pricing behavior, and advertising expansion.</p>
               </div>
               <div className="faq-item">
                 <h3>Do I need product costs?</h3>
-                <p>No. You can start with revenue opportunity first. Profit opportunity becomes available after COGS, FBA fees, and marketplace fees are added.</p>
+                <p>No. You can start with revenue opportunity first. Profit opportunities becomes available after COGS, FBA fees, and marketplace fees are added.</p>
               </div>
               <div className="faq-item">
                 <h3>Does Holocene automatically change prices?</h3>
-                <p>Holocene starts with analytics and recommendations. Automated price optimization is designed as a controlled co-pilot workflow with seller-defined limits.</p>
+                <p>Holocene starts with analytics and recommendations. Automated optimization is designed as a controlled Revenue Manager workflow with seller-defined limits.</p>
               </div>
               <div className="faq-item">
                 <h3>Why does Holocene use the last 60 days?</h3>
@@ -201,8 +206,8 @@ export default function Home() {
         <section className="section">
           <div className="container cta">
             <div>
-              <h2>Start with a free pricing analysis.</h2>
-              <p>Connect Amazon data, review your pricing dashboard, and open Pricing Workspace to inspect product-level opportunities.</p>
+              <h2>See how much revenue you're leaving behind.</h2>
+              <p>Connect Amazon, review your revenue dashboard, and see where products may be leaving money behind.</p>
             </div>
             <a className="btn btn-secondary" href={registerUrl}>Start Free Analysis</a>
           </div>

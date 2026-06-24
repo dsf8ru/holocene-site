@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
   title: {
 
-    default: "Holocene AI Pricing Co-Pilot",
+    default: "Holocene AI Revenue Manager",
 
     template: "%s | Holocene",
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
   description:
 
-    "Amazon pricing analytics and AI Pricing Co-Pilot for Private Label sellers.",
+    "AI Revenue Manager for Amazon Private Label sellers. Find pricing, advertising, revenue, and profit opportunities in one place.",
 
   icons: {
 
