@@ -9,19 +9,7 @@ services:
 
     restart: unless-stopped
 
-    expose:
+    ports:
 
-      - "3000"
-
-    networks:
-
-      - default
-
-      - edge_default
-
-networks:
-
-  edge_default:
-
-    external: true
+      - "3002:3000"
 
