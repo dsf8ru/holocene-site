@@ -1,4 +1,261 @@
-@import "tailwindcss";
+from pathlib import Path
+
+Path("src/app/page.tsx").write_text(r'''import Image from "next/image";
+
+const loginUrl = "https://app.holocene.ee/login";
+const registerUrl = "https://app.holocene.ee/register";
+
+function Header() {
+  return (
+    <header className="rev-nav">
+      <div className="rev-container rev-nav-inner">
+        <a className="rev-brand" href="/">
+          <Image className="rev-brand-mark" src="/logo-transparent.png" alt="Holocene" width={64} height={64} priority />
+          <span>Holocene</span>
+        </a>
+
+        <nav className="rev-menu">
+          <a href="#product">Product</a>
+          <a href="#team">AI Team</a>
+          <a href="#how">How it works</a>
+          <a href="/algorithm">About us</a>
+        </nav>
+
+        <a className="rev-btn rev-btn-primary" href={registerUrl}>Become a Design Partner</a>
+      </div>
+    </header>
+  );
+}
+
+function DashboardMock() {
+  return (
+    <div className="rev-dashboard">
+      <aside className="rev-dash-sidebar">
+        <div className="rev-dash-logo">
+          <Image src="/logo-transparent.png" alt="Holocene" width={32} height={32} />
+          <span>Holocene</span>
+        </div>
+        {["Overview", "Opportunities", "Pricing", "Advertising", "Listings", "Reviews", "Competitors", "Reports", "Settings"].map((item, index) => (
+          <div className={index === 0 ? "rev-side-item active" : "rev-side-item"} key={item}>{item}</div>
+        ))}
+      </aside>
+
+      <main className="rev-dash-main">
+        <div className="rev-dash-top">
+          <h3>Overview</h3>
+          <span>🇺🇸 Amazon.com</span>
+        </div>
+
+        <div className="rev-metrics">
+          <div className="rev-metric">
+            <p>Revenue Opportunity</p>
+            <strong>+$12,371</strong>
+            <span>vs last 30 days</span>
+          </div>
+          <div className="rev-metric">
+            <p>Profit Opportunity</p>
+            <strong>+$3,659</strong>
+            <span>vs last 30 days</span>
+          </div>
+        </div>
+
+        <div className="rev-dash-grid">
+          <div className="rev-table-card">
+            <h4>Top Opportunities</h4>
+            {[
+              ["Raise price: Organic cotton t-shirt", "+$1,240 /month", "High impact"],
+              ["Reduce TACOS: Auto Campaign", "+$980 /month", "High impact"],
+              ["Improve listing: Main image", "+$720 /month", "Medium"],
+              ["Fix negative review trend", "+$550 /month", "Medium"],
+              ["Competitor price change detected", "+$340 /month", "Low"],
+            ].map((row, i) => (
+              <div className="rev-table-row" key={row[0]}>
+                <span>{i + 1}</span>
+                <p>{row[0]}</p>
+                <strong>{row[1]}</strong>
+                <em>{row[2]}</em>
+              </div>
+            ))}
+          </div>
+
+          <div className="rev-chart-card">
+            <h4>Performance Trend</h4>
+            <div className="rev-chart-lines">
+              <svg viewBox="0 0 220 120" preserveAspectRatio="none">
+                <polyline points="0,90 25,70 50,82 75,50 100,64 125,38 150,54 175,28 220,18" fill="none" stroke="#7c3aed" strokeWidth="4" />
+                <polyline points="0,100 25,88 50,94 75,78 100,84 125,66 150,72 175,55 220,42" fill="none" stroke="#10b981" strokeWidth="4" />
+              </svg>
+            </div>
+            <div className="rev-insight">
+              <b>AI Insight</b>
+              <p>Your pricing is 7% below the optimal range for 23 SKUs.</p>
+              <a href={registerUrl}>View opportunity →</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+const team = [
+  ["🏷️", "AI Pricing Manager", ["Finds pricing opportunities", "Runs price tests", "Tracks price performance"], false],
+  ["📣", "AI Advertising Analyst", ["Monitors TACOS & ROAS", "Finds inefficient campaigns", "Suggests optimizations"], false],
+  ["📋", "AI Listing Specialist", ["Analyzes listing quality", "Detects content gaps", "Suggests improvements"], true],
+  ["⭐", "AI Review Analyst", ["Detects review trends", "Identifies product issues", "Alerts on risks"], true],
+  ["🏪", "AI Competitor Analyst", ["Tracks competitor moves", "Monitors pricing & stock", "Spots market changes"], true],
+];
+
+function Footer() {
+  return (
+    <footer className="rev-footer">
+      <div className="rev-container rev-footer-inner">
+        <div className="rev-brand small">
+          <Image className="rev-brand-mark" src="/logo-transparent.png" alt="Holocene" width={40} height={40} />
+          <span>Holocene</span>
+        </div>
+        <div className="rev-footer-links">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/support">Support</a>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+
+      <main>
+        <section className="rev-hero" id="product">
+          <div className="rev-container rev-hero-grid">
+            <div>
+              <div className="rev-eyebrow">AI Revenue Manager for Amazon Brands</div>
+              <h1>Your AI Revenue Manager for <span>Amazon Brands</span></h1>
+              <p>
+                An AI team of specialists that continuously monitors your business,
+                finds revenue opportunities, and recommends actions to grow your profit.
+              </p>
+
+              <div className="rev-actions">
+                <a className="rev-btn rev-btn-primary" href={registerUrl}>Become a Design Partner</a>
+                <a className="rev-btn rev-btn-secondary" href={loginUrl}>See Live Demo</a>
+              </div>
+
+              <div className="rev-quick">
+                <div>✓ Connect your Amazon account in minutes</div>
+                <div>↗ Get opportunities 24/7</div>
+                <div>⚡ Take action and see results</div>
+              </div>
+            </div>
+
+            <DashboardMock />
+          </div>
+        </section>
+
+        <section className="rev-section" id="team">
+          <div className="rev-container">
+            <h2 className="rev-center">Your AI team of specialists</h2>
+
+            <div className="rev-team-grid">
+              {team.map(([icon, title, items, soon]) => (
+                <div className="rev-team-card" key={String(title)}>
+                  <div className="rev-team-icon">{icon}</div>
+                  <div className="rev-team-title-row">
+                    <h3>{title}</h3>
+                    {soon ? <span>Coming soon</span> : null}
+                  </div>
+                  <ul>
+                    {(items as string[]).map((item) => <li key={item}>✓ {item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="rev-strip">
+              <span>▣ All in one place.</span>
+              <span>◎ Always working.</span>
+              <span>◈ Focused on your profit.</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="rev-section" id="how">
+          <div className="rev-container rev-how-grid">
+            <div>
+              <h2>How Holocene works</h2>
+              <div className="rev-steps">
+                {[
+                  ["🔗", "1. Connect", "Securely connect your Amazon account"],
+                  ["🛢️", "2. Analyze", "Analyzes millions of data points 24/7"],
+                  ["🔍", "3. Find", "Finds revenue opportunities"],
+                  ["✓", "4. Recommend", "Recommends clear actions"],
+                  ["📈", "5. Improve", "You take action and see measurable results"],
+                ].map((step) => (
+                  <div className="rev-step" key={step[1]}>
+                    <div>{step[0]}</div>
+                    <h3>{step[1]}</h3>
+                    <p>{step[2]}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rev-partner-card">
+              <div className="rev-eyebrow">Founding Design Partners</div>
+              <h2>Help shape the future of AI for Amazon</h2>
+              <p>We are looking for 5 Amazon brands and agencies to join as Founding Design Partners.</p>
+              <ul>
+                <li>✓ Free access for 12 months</li>
+                <li>✓ Direct access to founders</li>
+                <li>✓ Weekly product updates</li>
+                <li>✓ Priority support & early features</li>
+              </ul>
+              <a className="rev-btn rev-btn-primary" href={registerUrl}>Apply to become a Design Partner</a>
+            </div>
+          </div>
+        </section>
+
+        <section className="rev-section">
+          <div className="rev-container">
+            <h2 className="rev-center">What Amazon professionals say</h2>
+            <div className="rev-testimonials">
+              {[
+                ["Holocene found pricing opportunities we completely missed. It is like having another analyst on the team.", "Mike D.", "Amazon Brand Owner"],
+                ["It saves us hours every week. The recommendations are spot on and easy to act on.", "Sarah K.", "Amazon Agency Owner"],
+                ["Finally a tool that looks at the whole business, not just ads or pricing.", "James L.", "E-commerce Director"],
+              ].map((t) => (
+                <div className="rev-quote" key={t[1]}>
+                  <b>“</b>
+                  <p>{t[0]}</p>
+                  <strong>{t[1]}</strong>
+                  <span>{t[2]}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="rev-container rev-final">
+          <div className="rev-final-icon">▲</div>
+          <div>
+            <h2>Ready to build your AI Revenue Team?</h2>
+            <p>Join a small group of forward-thinking Amazon brands and agencies and help shape Holocene.</p>
+          </div>
+          <a className="rev-btn rev-btn-primary" href={registerUrl}>Become a Design Partner →</a>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+''')
+
+Path("src/app/globals.css").write_text(r'''@import "tailwindcss";
 
 :root {
   --bg: #fbfbff;
@@ -765,241 +1022,6 @@ a { color: inherit; text-decoration: none; }
     flex-direction: column;
   }
 }
+''')
 
-
-.rev-product-shot {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 34px 80px rgba(15, 23, 42, .12);
-  overflow: hidden;
-}
-
-.rev-product-shot img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-}
-
-@media (max-width: 720px) {
-  .rev-product-shot {
-    padding: 8px;
-    border-radius: 18px;
-  }
-
-  .rev-product-shot img {
-    border-radius: 12px;
-  }
-}
-
-
-/* AI Revenue landing refinements */
-.rev-hero-grid {
-  grid-template-columns: minmax(0, 0.88fr) minmax(620px, 1.12fr);
-  align-items: center;
-  gap: 56px;
-}
-
-.rev-hero h1 {
-  max-width: 760px;
-}
-
-.rev-hero p {
-  max-width: 650px;
-}
-
-.rev-product-shot {
-  transform: scale(1.12);
-  transform-origin: center right;
-}
-
-.rev-product-shot img {
-  width: 100%;
-  border-radius: 28px;
-  box-shadow: 0 32px 90px rgba(15, 23, 42, 0.14);
-}
-
-.rev-menu a[href="/algorithm"] {
-  display: none;
-}
-
-@media (max-width: 1100px) {
-  .rev-hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .rev-product-shot {
-    transform: none;
-  }
-}
-
-@media (max-width: 720px) {
-  .rev-hero h1 {
-    font-size: clamp(44px, 13vw, 72px);
-  }
-
-  .rev-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-
-/* Hero layout fix 2026-06-25 */
-@media (min-width: 1101px) {
-  .rev-hero-grid {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
-    gap: 72px !important;
-    align-items: center !important;
-  }
-
-  .rev-hero h1 {
-    font-size: clamp(68px, 5.45vw, 104px) !important;
-    line-height: 0.98 !important;
-    letter-spacing: -0.065em !important;
-    max-width: 720px !important;
-  }
-
-  .rev-hero p {
-    max-width: 660px !important;
-  }
-
-  .rev-product-shot {
-    transform: none !important;
-    width: 100% !important;
-    max-width: 860px !important;
-    justify-self: end !important;
-  }
-
-  .rev-product-shot picture,
-  .rev-product-shot img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-}
-
-@media (min-width: 1400px) {
-  .rev-product-shot {
-    max-width: 940px !important;
-  }
-}
-
-
-/* Force hero product screenshot larger */
-@media (min-width: 1101px) {
-  .rev-hero {
-    overflow: hidden !important;
-  }
-
-  .rev-hero-grid {
-    grid-template-columns: minmax(520px, 0.9fr) minmax(0, 1.1fr) !important;
-    gap: 42px !important;
-  }
-
-  .rev-product-shot {
-    max-width: none !important;
-    width: 118% !important;
-    justify-self: start !important;
-    transform: translateX(-8px) scale(1.08) !important;
-    transform-origin: left center !important;
-  }
-
-  .rev-product-shot img {
-    max-width: none !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .rev-hero h1 {
-    font-size: clamp(64px, 5.1vw, 96px) !important;
-    max-width: 700px !important;
-  }
-}
-
-@media (min-width: 1500px) {
-  .rev-product-shot {
-    width: 124% !important;
-    transform: translateX(-12px) scale(1.1) !important;
-  }
-}
-
-
-/* Final hero balance fix */
-@media (min-width: 1101px) {
-  .rev-hero-grid {
-    gap: 26px !important;
-  }
-
-  .rev-hero h1 {
-    font-size: clamp(56px, 4.5vw, 82px) !important;
-    line-height: 0.98 !important;
-    letter-spacing: -0.062em !important;
-    max-width: 650px !important;
-  }
-
-  .rev-hero p {
-    max-width: 560px !important;
-  }
-
-  .rev-product-shot {
-    width: 122% !important;
-    transform: translateX(-72px) scale(1.1) !important;
-    transform-origin: left center !important;
-  }
-}
-
-@media (min-width: 1500px) {
-  .rev-product-shot {
-    width: 126% !important;
-    transform: translateX(-88px) scale(1.1) !important;
-  }
-}
-
-
-/* hero responsive fix */
-
-.rev-hero-grid {
-  grid-template-columns: minmax(420px, 0.78fr) minmax(620px, 1.22fr) !important;
-  gap: 48px !important;
-  overflow: hidden;
-}
-
-.rev-hero h1 {
-  font-size: 56px !important;
-  line-height: 0.98 !important;
-  max-width: 620px;
-}
-
-.rev-hero p {
-  max-width: 560px;
-}
-
-.rev-product-shot {
-  min-width: 0;
-}
-
-@media (min-width: 1280px) {
-  .rev-hero h1 {
-    font-size: 58px !important;
-  }
-}
-
-@media (max-width: 1180px) {
-  .rev-hero-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .rev-hero h1 {
-    font-size: clamp(40px, 8vw, 56px) !important;
-    max-width: 760px;
-  }
-}
-
-@media (max-width: 720px) {
-  .rev-hero h1 {
-    font-size: 42px !important;
-  }
-}
+print("AI Revenue Manager homepage design applied.")

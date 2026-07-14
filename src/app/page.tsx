@@ -5,57 +5,114 @@ const registerUrl = "https://app.holocene.ee/register";
 
 function Header() {
   return (
-    <header className="nav">
-      <div className="container nav-inner">
-        <a className="brand" href="/" aria-label="Holocene home">
-          <Image className="brand-mark" src="/logo-transparent.png" alt="Holocene" width={96} height={96} priority />
-          <span>
-            <span className="brand-title">Holocene</span>
-            <span className="brand-subtitle">AI Pricing Co-Pilot</span>
-          </span>
+    <header className="rev-nav">
+      <div className="rev-container rev-nav-inner">
+        <a className="rev-brand" href="/">
+          <Image className="rev-brand-mark" src="/logo-transparent.png" alt="Holocene" width={64} height={64} priority />
+          <span>Holocene</span>
         </a>
 
-        <nav className="nav-links">
-          <a href="/algorithm">ML Algorithm</a>
-          <a href="#faq">FAQ</a>
+        <nav className="rev-menu">
+          <a href="#product">Product</a>
+          <a href="#team">AI Team</a>
+          <a href="#how">How it works</a>
+
         </nav>
 
-        <div className="actions">
-          <a className="btn btn-secondary" href={loginUrl}>Login</a>
-          <a className="btn btn-primary" href={registerUrl}>Start Free Analysis</a>
-        </div>
+        <a className="rev-btn rev-btn-primary" href={registerUrl}>Become a Design Partner</a>
       </div>
     </header>
   );
 }
 
-function Screen({ desktop, mobile, alt, priority = false, hero = false }: {
-  desktop: string;
-  mobile: string;
-  alt: string;
-  priority?: boolean;
-  hero?: boolean;
-}) {
+function DashboardMock() {
   return (
-    <div className={`screen-frame ${hero ? "hero-screen" : ""}`}>
-      <Image className="desktop-shot" src={desktop} alt={alt} width={1440} height={900} priority={priority} />
-      <Image className="mobile-shot" src={mobile} alt={alt} width={520} height={900} priority={priority} />
+    <div className="rev-dashboard">
+      <aside className="rev-dash-sidebar">
+        <div className="rev-dash-logo">
+          <Image src="/logo-transparent.png" alt="Holocene" width={32} height={32} />
+          <span>Holocene</span>
+        </div>
+        {["Overview", "Opportunities", "Pricing", "Advertising", "Listings", "Reviews", "Competitors", "Reports", "Settings"].map((item, index) => (
+          <div className={index === 0 ? "rev-side-item active" : "rev-side-item"} key={item}>{item}</div>
+        ))}
+      </aside>
+
+      <main className="rev-dash-main">
+        <div className="rev-dash-top">
+          <h3>Overview</h3>
+          <span>🇺🇸 Amazon.com</span>
+        </div>
+
+        <div className="rev-metrics">
+          <div className="rev-metric">
+            <p>Revenue Opportunity</p>
+            <strong>+$12,371</strong>
+            <span>vs last 30 days</span>
+          </div>
+          <div className="rev-metric">
+            <p>Profit Opportunity</p>
+            <strong>+$3,659</strong>
+            <span>vs last 30 days</span>
+          </div>
+        </div>
+
+        <div className="rev-dash-grid">
+          <div className="rev-table-card">
+            <h4>Top Opportunities</h4>
+            {[
+              ["Raise price: Organic cotton t-shirt", "+$1,240 /month", "High impact"],
+              ["Reduce TACOS: Auto Campaign", "+$980 /month", "High impact"],
+              ["Improve listing: Main image", "+$720 /month", "Medium"],
+              ["Fix negative review trend", "+$550 /month", "Medium"],
+              ["Competitor price change detected", "+$340 /month", "Low"],
+            ].map((row, i) => (
+              <div className="rev-table-row" key={row[0]}>
+                <span>{i + 1}</span>
+                <p>{row[0]}</p>
+                <strong>{row[1]}</strong>
+                <em>{row[2]}</em>
+              </div>
+            ))}
+          </div>
+
+          <div className="rev-chart-card">
+            <h4>Performance Trend</h4>
+            <div className="rev-chart-lines">
+              <svg viewBox="0 0 220 120" preserveAspectRatio="none">
+                <polyline points="0,90 25,70 50,82 75,50 100,64 125,38 150,54 175,28 220,18" fill="none" stroke="#7c3aed" strokeWidth="4" />
+                <polyline points="0,100 25,88 50,94 75,78 100,84 125,66 150,72 175,55 220,42" fill="none" stroke="#10b981" strokeWidth="4" />
+              </svg>
+            </div>
+            <div className="rev-insight">
+              <b>AI Insight</b>
+              <p>Your pricing is 7% below the optimal range for 23 SKUs.</p>
+              <a href={registerUrl}>View opportunity →</a>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
 
+const team = [
+  ["🏷️", "AI Pricing Manager", ["Finds pricing opportunities", "Recommends controlled price actions", "Tracks pricing performance"], false],
+  ["📣", "AI Advertising Analyst", ["Monitors TACOS & ROAS", "Finds inefficient campaigns", "Suggests advertising optimizations"], false],
+  ["📋", "AI Listing Specialist", ["Analyzes listing quality", "Detects content gaps", "Suggests improvements"], true],
+  ["⭐", "AI Review Analyst", ["Detects review trends", "Identifies product issues", "Alerts on risks"], true],
+  ["🏪", "AI Competitor Analyst", ["Tracks competitor moves", "Monitors pricing & stock", "Spots market changes"], true],
+];
+
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="container footer-inner">
-        <a className="footer-brand" href="/" aria-label="Holocene home">
-
-          <Image className="footer-mark" src="/logo-transparent.png" alt="Holocene" width={64} height={64} />
-
-          <span>Holocene</span><small>AI Pricing Co-Pilot</small>
-
-        </a>
-        <div className="footer-links">
+    <footer className="rev-footer">
+      <div className="rev-container rev-footer-inner">
+        <div className="rev-brand small">
+          <Image className="rev-brand-mark" src="/logo-transparent.png" alt="Holocene" width={40} height={40} />
+          <span>Holocene</span>
+        </div>
+        <div className="rev-footer-links">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
           <a href="/support">Support</a>
@@ -71,146 +128,110 @@ export default function Home() {
       <Header />
 
       <main>
-        <section className="hero">
-          <div className="container hero-grid">
+        <section className="rev-hero" id="product">
+          <div className="rev-container rev-hero-grid">
             <div>
-              <div className="eyebrow">AI Revenue Manager for Amazon Private Label and Brands</div>
-              <h1>AI Revenue Manager<br />for Amazon Brands</h1>
-              <p className="lead">
-                Find where your Amazon business is leaving money behind — pricing, advertising, revenue, and profit opportunities in one dashboard.
-              </p>
-
-              <div className="hero-actions">
-                <a className="btn btn-primary" href={registerUrl}>Start Free Analysis</a>
-                <a className="btn btn-secondary" href={loginUrl}>Login</a>
-              </div>
-            </div>
-
-            <Screen
-              desktop="/revenue-manager-desktop.webp"
-              mobile="/revenue-manager-mobile.webp"
-              alt="Holocene AI Revenue Manager dashboard"
-              priority
-              hero
-            />
-          </div>
-        </section>
-
-
-
-        <section className="value-strip" aria-label="Revenue Manager capabilities">
-          <div className="container value-grid">
-            <div className="value-card">
-              <span className="value-kicker">Revenue Opportunities</span>
-              <strong>+$9,067/month</strong>
-              <p>Find products with revenue upside from pricing and advertising.</p>
-            </div>
-            <div className="value-card">
-              <span className="value-kicker">Profit Opportunities</span>
-              <strong className="profit">+$3,218/month</strong>
-              <p>See profit impact before you make changes.</p>
-            </div>
-            <div className="value-card">
-              <span className="value-kicker">Advertising Expansion</span>
-              <strong>+$1,257/month</strong>
-              <p>Identify products where more ad spend can drive growth.</p>
-            </div>
-            <div className="value-card">
-              <span className="value-kicker">Recommended Actions</span>
-              <strong>3 products</strong>
-              <p>Know what to review next for every product.</p>
-            </div>
-          </div>
-        </section>
-
-        
-        <section className="badges-section" aria-label="Holocene marketplace and partner listings">
-          <div className="container badges-row">
-            <a className="badge-link" href="https://advertising.amazon.com/en-gb/partners/directory/details/amzn1.ads1.ma1.9zh2pgko4bqxt16cod1g95l55/Holocene-Services-OU" target="_blank" rel="noreferrer">
-              <img className="badge-img" src="/badges/amazon-ads.png" alt="Amazon Ads Verified Partner" />
-            </a>
-            <a className="badge-link" href="https://sellercentral.amazon.ae/selling-partner-appstore/dp/amzn1.sp.solution.a0501115-4484-46ea-abf4-4c64bba219ea" target="_blank" rel="noreferrer">
-              <img className="badge-img" src="/badges/amazon-appstore.png" alt="Available at Amazon Appstore" />
-            </a>
-            <a className="badge-link" href="https://apps.shopify.com/holoceneapi" target="_blank" rel="noreferrer">
-              <img className="badge-img" src="/badges/shopify-appstore.png" alt="Find it on the Shopify App Store" />
-            </a>
-          </div>
-        </section>
-<section className="section" id="how">
-          <div className="container workflow">
-            <div className="section-head">
-              <h2>How it works</h2>
+              <div className="rev-eyebrow">Built for Amazon Brands & Private Label Sellers</div>
+              <h1>Your AI Revenue Manager for <span>Amazon Brands</span></h1>
               <p>
-                Connect Amazon, let Holocene analyze the last 60 days, then review revenue opportunities or enable the AI co-pilot workflow.
+                While you run your business, Holocene continuously finds new opportunities
+                to increase revenue and profit through pricing and advertising decisions.
               </p>
+
+              <div className="rev-actions">
+                <a className="rev-btn rev-btn-primary" href={registerUrl}>Become a Design Partner</a>
+                <a className="rev-btn rev-btn-secondary" href={loginUrl}>Log in</a>
+              </div>
+
+              <div className="rev-quick">
+                <div>✓ Connect your Amazon account in minutes</div>
+                <div>↗ Find revenue opportunities continuously</div>
+                <div>⚡ Take action and track results</div>
+              </div>
             </div>
 
-            <div className="steps">
-              <div className="step">
-                <div className="step-num">1</div>
-                <h3>Connect Amazon</h3>
-                <p>Connect Seller Central and Amazon Ads.</p>
-              </div>
-              <div className="step">
-                <div className="step-num">2</div>
-                <h3>AI analyzes your business</h3>
-                <p>Holocene reviews sales, pricing, advertising, and product economics from the last 60 days.</p>
-              </div>
-              <div className="step">
-                <div className="step-num">3</div>
-                <h3>Revenue opportunities identified</h3>
-                <p>Find pricing, advertising, and profit improvements for every product.</p>
-              </div>
-              <div className="step">
-                <div className="step-num">4</div>
-                <h3>Review or automate</h3>
-                <p>Start with recommendations, then enable AI Revenue Manager when ready.</p>
-              </div>
+            <div className="rev-product-shot">
+              <picture>
+                <source media="(max-width: 720px)" srcSet="/revenue-manager-mobile.webp" />
+                <img
+                  src="/revenue-manager-desktop.webp"
+                  alt="Holocene AI Revenue Manager dashboard overview"
+                />
+              </picture>
             </div>
           </div>
         </section>
 
-        <section className="section" id="faq">
-          <div className="container faq">
-            <div>
-              <h2>FAQ</h2>
-              <p className="lead">A practical AI Revenue Manager for sellers using Amazon Seller Central and Amazon Ads.</p>
+        <section className="rev-section" id="team">
+          <div className="rev-container">
+            <h2 className="rev-center">Your AI Revenue Manager uses specialist agents</h2>
+
+            <div className="rev-team-grid">
+              {team.map(([icon, title, items, soon]) => (
+                <div className="rev-team-card" key={String(title)}>
+                  <div className="rev-team-icon">{icon}</div>
+                  <div className="rev-team-title-row">
+                    <h3>{title}</h3>
+                    <span>{soon ? "In development" : "Working"}</span>
+                  </div>
+                  <ul>
+                    {(items as string[]).map((item) => <li key={item}>✓ {item}</li>)}
+                  </ul>
+                </div>
+              ))}
             </div>
 
-            <div className="faq-list">
-              <div className="faq-item">
-                <h3>What does AI Revenue Manager actually do?</h3>
-                <p>Holocene identifies revenue, profit, pricing, and advertising opportunities for Amazon Private Label sellers, then turns them into product-level recommended actions.</p>
-              </div>
-              <div className="faq-item">
-                <h3>What data does Holocene use?</h3>
-                <p>Holocene uses Seller Central sales data and Amazon Ads performance data to analyze revenue opportunity, profit opportunity, pricing behavior, and advertising expansion.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Do I need product costs?</h3>
-                <p>No. You can start with revenue opportunity first. Profit opportunities becomes available after COGS, FBA fees, and marketplace fees are added.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Does Holocene automatically change prices?</h3>
-                <p>Holocene starts with analytics and recommendations. Automated optimization is designed as a controlled Revenue Manager workflow with seller-defined limits.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Why does Holocene use the last 60 days?</h3>
-                <p>A 60-day window gives the model enough recent price and sales behavior to evaluate pricing activity without relying on outdated market conditions.</p>
-              </div>
+            <div className="rev-strip">
+              <span>▣ All in one place.</span>
+              <span>◎ Always working.</span>
+              <span>◈ Focused on your profit.</span>
             </div>
           </div>
         </section>
 
-        <section className="section">
-          <div className="container cta">
+        <section className="rev-section" id="how">
+          <div className="rev-container rev-how-grid">
             <div>
-              <h2>See how much revenue you're leaving behind.</h2>
-              <p>Connect Amazon, review your revenue dashboard, and see where products may be leaving money behind.</p>
+              <h2>Your AI Revenue Manager never stops working</h2>
+              <div className="rev-steps">
+                {[
+                  ["🔗", "1. Connect", "Securely connect your Amazon account"],
+                  ["🛢️", "2. Analyze", "Analyzes pricing, ads and product data"],
+                  ["🔍", "3. Prioritize", "Finds the most important revenue opportunities"],
+                  ["✓", "4. Recommend", "Shows clear actions with expected impact"],
+                  ["📈", "5. Improve", "You take action, Holocene tracks results"],
+                ].map((step) => (
+                  <div className="rev-step" key={step[1]}>
+                    <div>{step[0]}</div>
+                    <h3>{step[1]}</h3>
+                    <p>{step[2]}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <a className="btn btn-secondary" href={registerUrl}>Start Free Analysis</a>
+
+            <div className="rev-partner-card">
+              <div className="rev-eyebrow">Founding Design Partners</div>
+              <h2>Become one of only 5 Founding Design Partners</h2>
+              <p>Build the first AI Revenue Manager for Amazon together with us. We are looking for Amazon brands and agencies that want the product shaped around their real workflow.</p>
+              <ul>
+                <li>✓ Free access for 12 months</li>
+                <li>✓ Direct access to founders</li>
+                <li>✓ Weekly product updates</li>
+                <li>✓ Priority support & early features</li>
+              </ul>
+              <a className="rev-btn rev-btn-primary" href={registerUrl}>Apply to become a Design Partner</a>
+            </div>
           </div>
+        </section>
+
+        <section className="rev-container rev-final">
+          <div className="rev-final-icon">▲</div>
+          <div>
+            <h2>Ready to build your AI Revenue Manager?</h2>
+            <p>Join a small group of forward-thinking Amazon brands and agencies and help shape Holocene around real marketplace workflows.</p>
+          </div>
+          <a className="rev-btn rev-btn-primary" href={registerUrl}>Become a Design Partner →</a>
         </section>
       </main>
 
